@@ -49,7 +49,7 @@ matlabbatch{1}.spm.spatial.preproc.warp.vox = NaN;
 matlabbatch{1}.spm.spatial.preproc.warp.bb = [NaN NaN NaN
                                               NaN NaN NaN];
 
-save('matlabbatch_segment.mat','matlabbatch');
+save('matlabbatch/matlabbatch_segment.mat','matlabbatch');
 
                                           
 % Create brain mask
@@ -68,5 +68,5 @@ matlabbatch{1}.spm.util.imcalc.options.mask = 0;
 matlabbatch{1}.spm.util.imcalc.options.interp = 0;
 matlabbatch{1}.spm.util.imcalc.options.dtype = 2;
 
-save('matlabbatch_brainmask.mat','matlabbatch');
+save('matlabbatch/matlabbatch_brainmask.mat','matlabbatch');
 
