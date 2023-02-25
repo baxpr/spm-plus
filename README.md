@@ -2,7 +2,19 @@
 
 Docker container from https://github.com/spm/spm-docker/pkgs/container/spm-docker with a few batch files added. The batch files hard-code a lot of filenames and paths and parameters, but allow custom processing with the standalone SPM in the otherwise stock container.
 
-A typical run command for docker would be 
+A typical run command for docker, using bash to perform some shell operations in addition to SPM batch jobs, operations, would be 
+
+    docker run -it \
+        --mount type=bind,src="`pwd -P`/INPUTS",dst=/INPUTS \
+        --mount type=bind,src="`pwd -P`/OUTPUTS",dst=/OUTPUTS \
+        --entrypoint 'bash' \
+        baxterprogers/spm-plus:v1.0.0 \
+        -c " \
+        cp /INPUTS/mrt1.nii.gz /OUTPUTS/t1.nii.gz && \
+        gunzip /OUTPUTS/t1.nii.gz && \
+        /opt/spm12/spm12 batch /opt/matlabbatch/matlabbatch_segment_30fwhm.mat && \
+        gzip /OUTPUTS/*.nii \
+        "
 
 ## matlabbatch_segment_30fwhm.mat
 
