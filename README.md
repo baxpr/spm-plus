@@ -2,6 +2,8 @@
 
 Docker container from https://github.com/spm/spm-docker/pkgs/container/spm-docker with a few batch files added. The batch files hard-code a lot of filenames and paths and parameters, but allow custom processing with the standalone SPM in the otherwise stock container.
 
+Batch files are generated with `make_batch.m` and stored in the `matlabbatch` directory.
+
 A typical run command for docker, using bash to perform some shell operations in addition to SPM batch jobs, operations, would be 
 
     docker run -it \
