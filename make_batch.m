@@ -13,7 +13,7 @@ clear matlabbatch
 matlabbatch{1}.spm.spatial.preproc.channel.vols = {fullfile(out_dir,'t1.nii')};
 matlabbatch{1}.spm.spatial.preproc.channel.biasreg = 0.001;
 matlabbatch{1}.spm.spatial.preproc.channel.biasfwhm = 30;
-matlabbatch{1}.spm.spatial.preproc.channel.write = [0 0];
+matlabbatch{1}.spm.spatial.preproc.channel.write = [1 1];
 matlabbatch{1}.spm.spatial.preproc.tissue(1).tpm = {fullfile(tpm_dir,'TPM.nii,1')};
 matlabbatch{1}.spm.spatial.preproc.tissue(1).ngaus = 1;
 matlabbatch{1}.spm.spatial.preproc.tissue(1).native = [1 0];
